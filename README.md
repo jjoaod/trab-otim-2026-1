@@ -1,1 +1,34 @@
 # trab-otim-2026-1
+
+
+SOLVER:
+julia solver.jl solucao.txt adm_50_1.dat 10
+
+
+SIMULATED ANNEALING:
+julia simulated_annealing.jl solucao.txt adm_50_1.dat 60 1000.0 0.995 750
+
+solucao.txt   -> output file
+adm_50_1.dat  -> instance (searched in adm/)
+60            -> time limit (seconds)
+1000.0        -> initial temperature
+0.995         -> cooling rate
+750           -> max_iter_no_improv
+
+
+PARAMETER TEST:
+
+julia initial_temp.jl results.txt
+julia max_iter_no_improv.jl results.txt
+julia cooling_rate.jl results.txt
+
+
+BUSCA GULOSA:
+julia simulated_annealing.jl solucao.txt adm_50_1.dat 60 0.001 0.999 750
+solucao.txt   -> output file
+adm_50_1.dat  -> instance (searched in adm/)
+60            -> time limit (seconds)
+0.001        -> initial temperature
+0.999         -> cooling rate
+750           -> max_iter_no_improv
+
